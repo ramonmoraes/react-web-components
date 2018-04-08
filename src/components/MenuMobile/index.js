@@ -5,19 +5,13 @@ class MenuMobile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: this.props.active ? true : false
+      active: this.props.active || true,
     };
   }
 
-  hideMenu = () => {
+  toggleMenu = () => {
     this.setState({
-      active: false
-    });
-  };
-
-  showMenu = () => {
-    this.setState({
-      active: true
+      active: !this.state.active
     });
   };
 
@@ -25,36 +19,49 @@ class MenuMobile extends Component {
     ev.stopPropagation();
   }
 
-  render() {
+  getListOfButtons = () => {
     const { active } = this.state;
-
-    const listOfButtons = this.props.children.length
+    const listOfChildren = this.props.children.length
       ? this.props.children
       : [this.props.children];
 
-    const containerClass = active
-      ? "side-nav-container side-nav-container-overlay"
-      : "side-nav-container";
-    const navClass =
-      "side-nav " + (active ? "side-nav-enabled" : "side-nav-disabled");
+    return listOfChildren.map((child, count) => {
+      const { action, children } = child.props;
+      const onChildClick = () => {
+        if (action) action();
+        this.toggleMenu();
+      };
+      return (
+        <button key={count} onClick={onChildClick}>
+          {children}
+        </button>
+      );
+    });
+  };
+
+  render() {
+    const { active } = this.state;
+    const listOfButtons = this.getListOfButtons();
+    const sideNavClass = active
+      ? "MenuMobile-sideNav MenuMobile-sideNav--enabled"
+      : "MenuMobile-sideNav";
 
     return (
-      <nav className="sticky-top">
-        <div className="top-menu">
-          <button onClick={this.showMenu}>
+      <nav className="MenuMobile">
+        <div className="MenuMobile-topBar">
+          <button onClick={this.toggleMenu}>
             {" "}
             <b> MENU </b>{" "}
           </button>
         </div>
-        <div className={containerClass} onClick={this.hideMenu}>
-          <div className={navClass} onClick={this.navStopPropagation}>
-            <header>
-              <h1 className="datClass">Header</h1>
-            </header>
 
-            <div className="btn-wrapper">
-              {listOfButtons.map(menuButton => menuButton)}
-            </div>
+        <div className={sideNavClass} onClick={this.navStopPropagation}>
+          <header className="MenuMobile-sideNav-header">
+            <h1 className="datClass">Header</h1>
+          </header>
+
+          <div className="MenuMobile-sideNav-buttons">
+            {listOfButtons.map(menuButton => menuButton)}
           </div>
         </div>
       </nav>

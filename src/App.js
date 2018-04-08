@@ -5,7 +5,6 @@ import LoadingWrapper from "./components/LoadingWrapper";
 
 class App extends Component {
   render() {
-    // <LoadingWrapper src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Big_Pinnacle_of_Pilot_Mountain_high_res.jpg"/>
     return (
       <div>
         <MenuMobile active="false">
@@ -33,7 +32,14 @@ class App extends Component {
           reproduzidas abaixo em sua forma exata original, acompanhada das
           versões para o inglês da tradução feita por H. Rackham em 1914.{" "}
         </p>
-
+        
+        <ul className='listOfLi'>
+            <li> Li-item </li>
+            <div> div </div>
+            <img/>
+            <a href='#'> a </a>
+        </ul>
+            
         <LoadingWrapper>
           <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Big_Pinnacle_of_Pilot_Mountain_high_res.jpg" />
         </LoadingWrapper>
