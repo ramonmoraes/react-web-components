@@ -5,7 +5,7 @@ class MenuMobile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: this.props.active || true,
+      active: this.props.active || true
     };
   }
 
@@ -45,9 +45,9 @@ class MenuMobile extends Component {
     const menuMobileClasss = active
       ? "MenuMobile MenuMobile--active"
       : "MenuMobile";
-    const overlay = (active)
-    ? (<div className="MenuMobile-overlay" onClick={this.toggleMenu}></div>)
-    : null;
+    const overlay = active ? (
+      <div className="MenuMobile-overlay" onClick={this.toggleMenu} />
+    ) : null;
 
     return (
       <nav className={menuMobileClasss}>
@@ -64,6 +64,7 @@ class MenuMobile extends Component {
           </header>
           <div className="MenuMobile-sideNav-buttons">
             {listOfButtons.map(menuButton => menuButton)}
+            <button onClick={this.toggleMenu}> Fechar </button>
           </div>
         </div>
       </nav>

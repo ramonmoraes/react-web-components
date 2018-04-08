@@ -9,7 +9,6 @@ class App extends Component {
       <div>
         <MenuMobile active="false">
           <button> Oi </button>
-          <button> Oi </button>
         </MenuMobile>
 
         <p> Olá</p>
