@@ -4,7 +4,7 @@
   transition: 0.35s ease-out; }
   .MenuMobile-topBar {
     height: 50px;
-    box-shadow: 0 2px 10px -1px #676767;
+    box-shadow: 2px 2px 10px -1px #676767;
     display: flex;
     align-items: center;
     flex-direction: row-reverse; }
@@ -35,7 +35,8 @@
     background-color: white;
     box-shadow: 1px 0px 10px 0px #777;
     will-change: transform;
-    transform: translateX(-100%); }
+    transform: translateX(-101%);
+    box-shadow: 2px 2px 10px -1px #676767; }
     .MenuMobile-sideNav-header {
       height: 35%;
       font-size: 1.5em;
@@ -63,4 +64,4 @@
           background-color: #dcdcdc; }
 
 .MenuMobile--active .MenuMobile-sideNav {
-  transform: translateX(0%) !important; }
+  transform: translateX(0%); }
