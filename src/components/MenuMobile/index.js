@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import style from './style.css';
+import './style.css';
 
 class MenuMobile extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: true || this.props.active,
+            active: (this.props.active) ? true : false,
         }
+        
     }
 
     hideMenu =()=> {

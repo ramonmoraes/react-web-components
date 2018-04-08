@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MenuMobile from './components/MenuMobile';
+import MenuTabletDynamic from './components/MenuTabletDynamic';
 
 class App extends Component {
 render() {
@@ -8,9 +9,17 @@ return  (
         <MenuMobile>
             <button> Oi </button>
             <button> Oi </button>
-            <button> Oi </button>
         </MenuMobile>
-        <p> Ola galera </p>
+
+        <MenuTabletDynamic>
+            <button> button </button>
+            <button> button </button>
+            <button> button </button>
+            <button> button </button>
+            <button> button </button>
+            <button> button </button>
+        </MenuTabletDynamic>
+            
     </div>
     );
 }
