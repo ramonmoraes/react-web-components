@@ -42,24 +42,26 @@ class MenuMobile extends Component {
   render() {
     const { active } = this.state;
     const listOfButtons = this.getListOfButtons();
-    const sideNavClass = active
-      ? "MenuMobile-sideNav MenuMobile-sideNav--enabled"
-      : "MenuMobile-sideNav";
+    const menuMobileClasss = active
+      ? "MenuMobile MenuMobile--active"
+      : "MenuMobile";
+    const overlay = (active)
+    ? (<div className="MenuMobile-overlay" onClick={this.toggleMenu}></div>)
+    : null;
 
     return (
-      <nav className="MenuMobile">
+      <nav className={menuMobileClasss}>
         <div className="MenuMobile-topBar">
           <button onClick={this.toggleMenu}>
             {" "}
             <b> MENU </b>{" "}
           </button>
         </div>
-
-        <div className={sideNavClass} onClick={this.navStopPropagation}>
+        {overlay}
+        <div className="MenuMobile-sideNav" onClick={this.navStopPropagation}>
           <header className="MenuMobile-sideNav-header">
             <h1 className="datClass">Header</h1>
           </header>
-
           <div className="MenuMobile-sideNav-buttons">
             {listOfButtons.map(menuButton => menuButton)}
           </div>
