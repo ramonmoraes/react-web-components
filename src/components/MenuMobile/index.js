@@ -5,7 +5,7 @@ class MenuMobile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: this.props.active || true
+      active: (this.props.active) ? this.props.active : false
     };
   }
 

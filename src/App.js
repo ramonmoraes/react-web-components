@@ -5,6 +5,10 @@ import LoadingWrapper from "./components/LoadingWrapper";
 
 class App extends Component {
   render() {
+    const padding10 = {
+      padding: 10 + "px"
+    };
+    
     return (
       <div>
         <MenuMobile active={false}>
@@ -17,8 +21,8 @@ class App extends Component {
           <button> A </button>
         </MenuTablet>
     
-        <p> Olá</p>
-        <p>
+        <p style={padding10}> Olá</p>
+        <p style={padding10}>
           De onde ele vem? Ao contrário do que se acredita, Lorem Ipsum não é
           simplesmente um texto randômico. Com mais de 2000 anos, suas raízes
           podem ser encontradas em uma obra de literatura latina clássica datada
