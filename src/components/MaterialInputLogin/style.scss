@@ -1,8 +1,9 @@
 .MaterialLogin {
+  $activeColor: #538fef;
   padding: 16px 4px 2px 4px;
   position: relative;
   border-bottom: 1px solid #dcdcdc;
-
+  $transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88);
   &-input {
     width: 100%;
     position: relative;
@@ -16,7 +17,7 @@
   }
 
   &-placeholder {
-    transition: 0.25s ease;
+    transition: $transition;
     position: absolute;
     left: 0;
     padding: 2px 4px;
@@ -27,31 +28,29 @@
   
   &-complementary {
     position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: $activeColor;
+    bottom: -2px;
+    left: 0%;
+    transform: scaleX(0);
+    transition: $transition;
   }
 }
 
 .MaterialLogin--active {
   .MaterialLogin {
-    &-input {
-      &::placholder {
-        visibility: visible;
-      }
-    }
+  $activeColor: #538fef;
+    
     &-placeholder {
       cursor: context-menu;
       font-size: 14px;
-      color: inherit;
+      color: $activeColor;
       transform: translateY(-100%);
     }
 
-    &:after {
-      content: '';
-      position: absolute;
-      height: 2px;
-      width: 100%;
-      background-color: red;
-      bottom: 0px;
-      left: 0%;
+    &-complementary {
+      transform: scaleX(1);
     }
   }
 }

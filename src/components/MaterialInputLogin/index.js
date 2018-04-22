@@ -47,6 +47,7 @@ class MaterialInputLogin extends Component {
           placeholder={this.props.placeholder}
           type={this.props.type || "text"}
         />
+        <span className="MaterialLogin-complementary"> </span>
       </div>
     );
   }
