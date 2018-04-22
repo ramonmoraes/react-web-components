@@ -36,3 +36,9 @@
 
 .MaterialLogin--active .MaterialLogin-complementary {
   transform: scaleX(1); }
+
+.MaterialLogin--completed .MaterialLogin-placeholder {
+  color: #444; }
+
+.MaterialLogin--completed .MaterialLogin-complementary {
+  transform: scaleX(0); }

@@ -25,7 +25,7 @@
     z-index: 1;
     cursor: text;
   }
-  
+
   &-complementary {
     position: absolute;
     height: 2px;
@@ -40,8 +40,8 @@
 
 .MaterialLogin--active {
   .MaterialLogin {
-  $activeColor: #538fef;
-    
+    $activeColor: #538fef;
+
     &-placeholder {
       cursor: context-menu;
       font-size: 14px;
@@ -51,6 +51,18 @@
 
     &-complementary {
       transform: scaleX(1);
+    }
+  }
+}
+
+.MaterialLogin--completed {
+  .MaterialLogin {
+    $completedColor: #444;
+    &-placeholder {
+      color: $completedColor;
+    }
+    &-complementary {
+      transform: scaleX(0);
     }
   }
 }
