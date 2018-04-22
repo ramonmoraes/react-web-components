@@ -3,26 +3,26 @@ import MenuMobile from "./components/MenuMobile";
 import MenuTablet from "./components/MenuTablet";
 import LoadingWrapper from "./components/LoadingWrapper";
 import MaterialInputLogin from "./components/MaterialInputLogin";
-import './index.css';
+import "./index.css";
 
 class App extends Component {
   render() {
     const padding10 = {
       padding: 10 + "px"
     };
-    
+
     return (
       <div className="example-playground">
         <MenuMobile active={false}>
           <button> Oi </button>
         </MenuMobile>
 
-        <MenuTablet active={false}>
+        {/* <MenuTablet active={false}>
           <button> X </button>
           <button> C </button>
           <button> A </button>
-        </MenuTablet>
-    
+        </MenuTablet> */}
+
         <p style={padding10}> Olá</p>
         <p style={padding10}>
           De onde ele vem? Ao contrário do que se acredita, Lorem Ipsum não é
@@ -44,10 +44,31 @@ class App extends Component {
           versões para o inglês da tradução feita por H. Rackham em 1914.{" "}
         </p>
         <div className="card">
-          <MaterialInputLogin name={"name"} placeholder={"Seu nome!"} />
-          <MaterialInputLogin name={"Sobrenome"} placeholder={"Sobrenome"} />
-        </div>
+          <MaterialInputLogin
+            autoComplete={"disabled"}
+            name={"name"}
+            placeholder={"Seu nome!"}
+          />
+          <MaterialInputLogin
+            autoComplete={"disabled"}
+            name={"juricema"}
+            placeholder={"Seu juricema retado!"}
+          />
+          <MaterialInputLogin
+            autoComplete={"disabled"}
+            name={"Sobrenome"}
+            placeholder={"Sobrenome"}
+            error={"Nome muito feio"}
+          />
 
+          <MaterialInputLogin
+            autoComplete={"disabled"}
+            name={"numero"}
+            placeholder={"numero"}
+            type={"number"}
+            icon={"face"}
+          />
+        </div>
       </div>
     );
   }

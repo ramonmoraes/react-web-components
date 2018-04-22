@@ -1,12 +1,16 @@
 .MaterialLogin {
-  padding: 16px 4px 2px 4px;
-  margin-bottom: 8px;
   position: relative;
-  border-bottom: 1px solid #dcdcdc; }
+  padding-top: 16px;
+  margin-bottom: 8px;
+  display: flex; }
+  .MaterialLogin-content {
+    width: 100%; }
   .MaterialLogin-input {
     width: 100%;
-    position: relative;
-    border: none; }
+    border: none;
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 8px;
+    padding-top: 8px; }
     .MaterialLogin-input::placeholder {
       visibility: hidden; }
     .MaterialLogin-input:focus {
@@ -14,32 +18,47 @@
   .MaterialLogin-placeholder {
     transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88);
     position: absolute;
-    left: 0;
-    padding: 2px 4px;
     color: #aaa;
-    z-index: 1;
     cursor: text; }
-  .MaterialLogin-complementary {
-    position: absolute;
+  .MaterialLogin-guide-line {
+    position: relative;
+    display: flex;
     height: 2px;
     width: 100%;
     background-color: #538fef;
-    bottom: -2px;
+    top: -1px;
     left: 0%;
     transform: scaleX(0);
     transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88); }
+  .MaterialLogin-error {
+    font-size: 12px;
+    padding: 8px 0; }
+  .MaterialLogin-icon {
+    padding-right: 16px; }
 
 .MaterialLogin--active .MaterialLogin-placeholder {
   cursor: context-menu;
-  font-size: 14px;
+  font-size: 12px;
   color: #538fef;
   transform: translateY(-100%); }
 
-.MaterialLogin--active .MaterialLogin-complementary {
+.MaterialLogin--active .MaterialLogin-guide-line {
   transform: scaleX(1); }
 
 .MaterialLogin--idle .MaterialLogin-placeholder {
   color: #444; }
 
-.MaterialLogin--idle .MaterialLogin-complementary {
+.MaterialLogin--idle .MaterialLogin-guide-line {
   transform: scaleX(0); }
+
+.MaterialLogin--error .MaterialLogin-input {
+  border-bottom: 1px solid tomato; }
+
+.MaterialLogin--error .MaterialLogin-placeholder {
+  color: tomato; }
+
+.MaterialLogin--error .MaterialLogin-guide-line {
+  background-color: tomato; }
+
+.MaterialLogin--error .MaterialLogin-error {
+  color: tomato; }
