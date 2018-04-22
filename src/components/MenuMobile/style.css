@@ -1,7 +1,8 @@
 .MenuMobile {
   position: sticky;
   top: 0px;
-  transition: 0.35s ease-out; }
+  transition: 0.35s ease-out;
+  background-color: white; }
   .MenuMobile-topBar {
     height: 50px;
     box-shadow: 2px 2px 10px -1px #676767;
