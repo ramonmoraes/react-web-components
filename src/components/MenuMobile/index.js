@@ -16,9 +16,10 @@ class MenuMobile extends Component {
     });
   };
 
-  navStopPropagation(ev) {
-    ev.stopPropagation();
-  }
+  handleSideNav(ev){
+   ev.stopPropagation();
+   console.log(ev);
+  } 
 
   getListOfButtons = () => {
     const { active } = this.state;
@@ -51,7 +52,6 @@ class MenuMobile extends Component {
       <div className="MenuMobile-overlay" onClick={this.toggleMenu} />
     ) : null;
 
-
     return (
       <nav className={menuMobileClasss}>
         <div className="MenuMobile-topBar">
@@ -61,7 +61,7 @@ class MenuMobile extends Component {
           </button>
         </div>
         {overlay}
-        <div className="MenuMobile-sideNav" onClick={this.navStopPropagation}>
+        <div className="MenuMobile-sideNav" ref={(sideNav)=> this.sideNav = sideNav}onClick={this.handleSideNav}>
           <header className="MenuMobile-sideNav-header">
             <h1 className="datClass">Header</h1>
           </header>
