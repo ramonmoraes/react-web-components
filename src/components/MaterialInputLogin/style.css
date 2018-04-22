@@ -16,7 +16,8 @@
     left: 0;
     padding: 2px 4px;
     color: #aaa;
-    z-index: 1; }
+    z-index: 1;
+    cursor: text; }
   .MaterialLogin-complementary {
     position: absolute; }
 
@@ -24,6 +25,7 @@
   visibility: visible; }
 
 .MaterialLogin--active .MaterialLogin-placeholder {
+  cursor: context-menu;
   font-size: 14px;
   color: inherit;
   transform: translateY(-100%); }

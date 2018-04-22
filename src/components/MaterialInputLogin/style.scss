@@ -22,6 +22,7 @@
     padding: 2px 4px;
     color: #aaa;
     z-index: 1;
+    cursor: text;
   }
   
   &-complementary {
@@ -37,6 +38,7 @@
       }
     }
     &-placeholder {
+      cursor: context-menu;
       font-size: 14px;
       color: inherit;
       transform: translateY(-100%);
