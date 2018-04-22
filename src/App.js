@@ -54,7 +54,7 @@ class App extends Component {
             autoComplete={"disabled"}
             name={"sobrenome"}
             label={"Sobrenome"}
-            helper={"helper aqui"}
+            helper={"Apenas letras"}
           />
 
           <MaterialInputLogin

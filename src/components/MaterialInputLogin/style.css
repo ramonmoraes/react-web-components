@@ -42,9 +42,6 @@
     font-size: 12px;
     color: rgba(0, 0, 0, 0.54);
     padding: 8px 0; }
-  .MaterialLogin-helper {
-    display: flex;
-    flex-direction: row-reverse; }
   .MaterialLogin-icon {
     padding-right: 16px; }
 

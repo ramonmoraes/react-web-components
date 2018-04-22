@@ -69,11 +69,6 @@ $black87 : rgba(0,0,0,0.87);
     padding: $spacer 0;
   }
 
-  &-helper {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-
   &-icon {
     padding-right: $spacer * 2;
   }
