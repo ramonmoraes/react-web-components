@@ -8,7 +8,7 @@
   .MaterialLogin-input {
     width: 100%;
     border: none;
-    border-bottom: 2px solid #dcdcdc;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.54);
     padding-bottom: 8px;
     padding-top: 8px; }
     .MaterialLogin-input::placeholder {
@@ -21,12 +21,12 @@
       .MaterialLogin-input:disabled:hover {
         border-bottom-color: #dcdcdc; }
     .MaterialLogin-input:hover {
-      border-bottom-color: #111;
-      transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88); }
-  .MaterialLogin-placeholder {
+      border-bottom-color: rgba(0, 0, 0, 0.87);
+      transition: 0.1s; }
+  .MaterialLogin-label {
     transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88);
     position: absolute;
-    color: #aaa;
+    color: rgba(0, 0, 0, 0.54);
     cursor: text; }
   .MaterialLogin-guide-line {
     position: relative;
@@ -38,13 +38,17 @@
     left: 0%;
     transform: scaleX(0);
     transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88); }
-  .MaterialLogin-error {
+  .MaterialLogin-error, .MaterialLogin-helper {
     font-size: 12px;
+    color: rgba(0, 0, 0, 0.54);
     padding: 8px 0; }
+  .MaterialLogin-helper {
+    display: flex;
+    flex-direction: row-reverse; }
   .MaterialLogin-icon {
     padding-right: 16px; }
 
-.MaterialLogin--active .MaterialLogin-placeholder {
+.MaterialLogin--active .MaterialLogin-label {
   cursor: context-menu;
   font-size: 12px;
   color: #538fef;
@@ -53,16 +57,16 @@
 .MaterialLogin--active .MaterialLogin-guide-line {
   transform: scaleX(1); }
 
-.MaterialLogin--idle .MaterialLogin-placeholder {
-  color: #444; }
+.MaterialLogin--idle .MaterialLogin-label {
+  color: rgba(0, 0, 0, 0.87); }
 
 .MaterialLogin--idle .MaterialLogin-guide-line {
   transform: scaleX(0); }
 
 .MaterialLogin--error .MaterialLogin-input {
-  border-bottom: 1px solid tomato; }
+  border-bottom-color: tomato; }
 
-.MaterialLogin--error .MaterialLogin-placeholder {
+.MaterialLogin--error .MaterialLogin-label {
   color: tomato; }
 
 .MaterialLogin--error .MaterialLogin-guide-line {

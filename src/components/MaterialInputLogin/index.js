@@ -41,7 +41,13 @@ class MaterialInputLogin extends Component {
     const { icon } = this.props;
     return icon ? <span className={`icon-${icon}`}> </span> : null;
   };
-  
+
+  getAuxiliaryMsg = () => {
+    const { error, helper} = this.props;
+    return ( error )
+    ? (<div className="MaterialLogin-error"> {error} </div>)
+    : (<div className="MaterialLogin-helper"> {helper} </div>)
+  };
   render() {
     const { isActive, isIdle } = this.state;
     const { error, disabled } = this.props;
@@ -59,8 +65,8 @@ class MaterialInputLogin extends Component {
       <div className={materialClass}>
         {this.getIcon()}
         <div className="MaterialLogin-content">
-          <label className="MaterialLogin-placeholder" htmlFor={this.getId()}>
-            {this.props.placeholder}
+          <label className="MaterialLogin-label" htmlFor={this.getId()}>
+            {this.props.label}
           </label>
           <input
             className={inputClass}
@@ -77,7 +83,7 @@ class MaterialInputLogin extends Component {
             disabled={this.props.disabled}
           />
           <span className="MaterialLogin-guide-line"> </span>
-          <div className="MaterialLogin-error"> {error} </div>
+          {this.getAuxiliaryMsg()}
         </div>
       </div>
     );

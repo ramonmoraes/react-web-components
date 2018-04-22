@@ -47,24 +47,27 @@ class App extends Component {
           <MaterialInputLogin
             autoComplete={"disabled"}
             name={"name"}
-            placeholder={"Nome"}
+            label={"Nome"}
           />
+
           <MaterialInputLogin
             autoComplete={"disabled"}
-            name={"juricema"}
-            placeholder={"Sobrenome"}
+            name={"sobrenome"}
+            label={"Sobrenome"}
+            helper={"helper aqui"}
           />
+
           <MaterialInputLogin
             autoComplete={"disabled"}
             name={"error"}
-            placeholder={"Input com error"}
+            label={"Input com error"}
             error={"Msg via props"}
           />
 
           <MaterialInputLogin
             autoComplete={"disabled"}
             name={"numero"}
-            placeholder={"Numero"}
+            label={"Numero"}
             type={"number"}
             icon={"face"}
           />
@@ -72,11 +75,10 @@ class App extends Component {
           <MaterialInputLogin
             autoComplete={"disabled"}
             name={"Disabled"}
-            placeholder={"Disabled"}
+            label={"Disabled"}
             type={"text"}
             disabled
           />
-
         </div>
       </div>
     );

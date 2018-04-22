@@ -1,3 +1,7 @@
+$black38 : rgba(0,0,0,0.38);
+$black54 : rgba(0,0,0,0.54);
+$black87 : rgba(0,0,0,0.87);
+
 .MaterialLogin {
   $activeColor: #538fef;
   $spacer: 8px;
@@ -8,13 +12,15 @@
   margin-bottom: $spacer;
   $transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88);
 
+  
   &-content {
     width: 100%;
   }
+
   &-input {
     width: 100%;
     border: none;
-    border-bottom: 2px solid #dcdcdc;
+    border-bottom: 2px solid $black54;
     padding-bottom: $spacer;
     padding-top: $spacer;
 
@@ -27,21 +33,21 @@
     &:disabled {
       border-bottom-style: dashed;
       background-color: inherit;
-      
       &:hover {
         border-bottom-color: #dcdcdc;
       }
     }
+
     &:hover {
-      border-bottom-color: #111;
-      transition: $transition;
+      border-bottom-color: $black87;
+      transition: 0.1s;
     }
   }
 
-  &-placeholder {
+  &-label {
     transition: $transition;
     position: absolute;
-    color: #aaa;
+    color: $black54;  
     cursor: text;
   }
 
@@ -57,9 +63,15 @@
     transition: $transition;
   }
 
-  &-error {
+  &-error, &-helper {
     font-size: 12px;
+    color: $black54;  
     padding: $spacer 0;
+  }
+
+  &-helper {
+    display: flex;
+    flex-direction: row-reverse;
   }
 
   &-icon {
@@ -71,7 +83,7 @@
   .MaterialLogin {
     $activeColor: #538fef;
 
-    &-placeholder {
+    &-label {
       cursor: context-menu;
       font-size: 12px;
       color: $activeColor;
@@ -86,9 +98,8 @@
 
 .MaterialLogin--idle {
   .MaterialLogin {
-    $idleColor: #444;
-    &-placeholder {
-      color: $idleColor;
+    &-label {
+      color: $black87;
     }
     &-guide-line {
       transform: scaleX(0);
@@ -100,9 +111,9 @@
   .MaterialLogin {
     $errorColor: tomato;
     &-input {
-      border-bottom: 1px solid $errorColor;
+      border-bottom-color: $errorColor;
     }
-    &-placeholder {
+    &-label {
       color: $errorColor;
     }
     &-guide-line {
