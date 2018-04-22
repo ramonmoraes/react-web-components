@@ -6,7 +6,7 @@ class MaterialInputLogin extends Component {
     super(props);
     this.state = {
       isActive: false,
-      isCompleted: false,
+      isIdle: false,
       value: this.props.value || ""
     };
   }
@@ -18,7 +18,7 @@ class MaterialInputLogin extends Component {
   handleFocus = () => {
     this.setState({
       isActive: true,
-      isCompleted: false
+      isIdle: false
     });
   };
 
@@ -26,11 +26,11 @@ class MaterialInputLogin extends Component {
     if (this.state.value === "") {
       this.setState({
         isActive: false,
-        isCompleted: false
+        isIdle: false
       });
     } else {
       this.setState({
-        isCompleted: true
+        isIdle: true
       });
     }
   };
@@ -38,12 +38,12 @@ class MaterialInputLogin extends Component {
   getId = () => `${this.props.name}-input`;
 
   render() {
-    const { isActive, isCompleted } = this.state;
+    const { isActive, isIdle } = this.state;
     let materialClass = isActive
       ? "MaterialLogin MaterialLogin--active"
       : "MaterialLogin";
 
-    if (isCompleted) {
+    if (isIdle) {
       materialClass =
         "MaterialLogin MaterialLogin--active MaterialLogin--completed";
     }

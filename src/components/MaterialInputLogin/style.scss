@@ -1,6 +1,8 @@
 .MaterialLogin {
   $activeColor: #538fef;
   padding: 16px 4px 2px 4px;
+  margin-bottom: 8px;
+
   position: relative;
   border-bottom: 1px solid #dcdcdc;
   $transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88);
@@ -55,11 +57,11 @@
   }
 }
 
-.MaterialLogin--completed {
+.MaterialLogin--idle {
   .MaterialLogin {
-    $completedColor: #444;
+    $idleColor: #444;
     &-placeholder {
-      color: $completedColor;
+      color: $idleColor;
     }
     &-complementary {
       transform: scaleX(0);

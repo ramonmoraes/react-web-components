@@ -45,6 +45,7 @@ class App extends Component {
         </p>
         <div className="card">
           <MaterialInputLogin name={"name"} placeholder={"Seu nome!"} />
+          <MaterialInputLogin name={"Sobrenome"} placeholder={"Sobrenome"} />
         </div>
 
       </div>

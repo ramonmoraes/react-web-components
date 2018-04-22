@@ -1,5 +1,6 @@
 .MaterialLogin {
   padding: 16px 4px 2px 4px;
+  margin-bottom: 8px;
   position: relative;
   border-bottom: 1px solid #dcdcdc; }
   .MaterialLogin-input {
@@ -37,8 +38,8 @@
 .MaterialLogin--active .MaterialLogin-complementary {
   transform: scaleX(1); }
 
-.MaterialLogin--completed .MaterialLogin-placeholder {
+.MaterialLogin--idle .MaterialLogin-placeholder {
   color: #444; }
 
-.MaterialLogin--completed .MaterialLogin-complementary {
+.MaterialLogin--idle .MaterialLogin-complementary {
   transform: scaleX(0); }
