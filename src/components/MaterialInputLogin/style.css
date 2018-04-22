@@ -1,20 +1,28 @@
 .MaterialLogin {
   position: relative;
+  display: flex;
   padding-top: 16px;
-  margin-bottom: 8px;
-  display: flex; }
+  margin-bottom: 8px; }
   .MaterialLogin-content {
     width: 100%; }
   .MaterialLogin-input {
     width: 100%;
     border: none;
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 2px solid #dcdcdc;
     padding-bottom: 8px;
     padding-top: 8px; }
     .MaterialLogin-input::placeholder {
       visibility: hidden; }
     .MaterialLogin-input:focus {
       outline: none; }
+    .MaterialLogin-input:disabled {
+      border-bottom-style: dashed;
+      background-color: inherit; }
+      .MaterialLogin-input:disabled:hover {
+        border-bottom-color: #dcdcdc; }
+    .MaterialLogin-input:hover {
+      border-bottom-color: #111;
+      transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88); }
   .MaterialLogin-placeholder {
     transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88);
     position: absolute;
@@ -24,9 +32,9 @@
     position: relative;
     display: flex;
     height: 2px;
-    width: 100%;
+    width: 101%;
     background-color: #538fef;
-    top: -1px;
+    top: -2px;
     left: 0%;
     transform: scaleX(0);
     transition: 0.3s cubic-bezier(0.7, 0.04, 0.28, 0.88); }

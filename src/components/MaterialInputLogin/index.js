@@ -36,24 +36,24 @@ class MaterialInputLogin extends Component {
   };
 
   getId = () => `${this.props.name}-input`;
+
   getIcon = () => {
     const { icon } = this.props;
     return icon ? <span className={`icon-${icon}`}> </span> : null;
   };
+  
   render() {
     const { isActive, isIdle } = this.state;
-    const { error } = this.props;
+    const { error, disabled } = this.props;
 
-    let materialClass = isActive
-      ? "MaterialLogin MaterialLogin--active"
-      : "MaterialLogin";
-
+    let materialClass = "MaterialLogin";
+    if (isActive) materialClass += " MaterialLogin--active";
     if (isIdle) materialClass += " MaterialLogin--idle";
     if (error) materialClass += " MaterialLogin--error";
 
-    const inputClass = error
-      ? "MaterialLogin-input MaterialLogin-input--error"
-      : "MaterialLogin-input";
+    let inputClass = "MaterialLogin-input";
+    if (error) inputClass += " MaterialLogin-input--error";
+    if (disabled) inputClass += " MaterialLogin-input--disabled";
 
     return (
       <div className={materialClass}>
@@ -73,7 +73,8 @@ class MaterialInputLogin extends Component {
             onBlur={this.handleBlur}
             placeholder={this.props.placeholder}
             type={this.props.type || "input"}
-            autocomplete={this.props.autoComplete}
+            autoComplete={this.props.autoComplete}
+            disabled={this.props.disabled}
           />
           <span className="MaterialLogin-guide-line"> </span>
           <div className="MaterialLogin-error"> {error} </div>

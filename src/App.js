@@ -47,27 +47,36 @@ class App extends Component {
           <MaterialInputLogin
             autoComplete={"disabled"}
             name={"name"}
-            placeholder={"Seu nome!"}
+            placeholder={"Nome"}
           />
           <MaterialInputLogin
             autoComplete={"disabled"}
             name={"juricema"}
-            placeholder={"Seu juricema retado!"}
+            placeholder={"Sobrenome"}
           />
           <MaterialInputLogin
             autoComplete={"disabled"}
-            name={"Sobrenome"}
-            placeholder={"Sobrenome"}
-            error={"Nome muito feio"}
+            name={"error"}
+            placeholder={"Input com error"}
+            error={"Msg via props"}
           />
 
           <MaterialInputLogin
             autoComplete={"disabled"}
             name={"numero"}
-            placeholder={"numero"}
+            placeholder={"Numero"}
             type={"number"}
             icon={"face"}
           />
+
+          <MaterialInputLogin
+            autoComplete={"disabled"}
+            name={"Disabled"}
+            placeholder={"Disabled"}
+            type={"text"}
+            disabled
+          />
+
         </div>
       </div>
     );
