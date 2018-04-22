@@ -13,7 +13,7 @@ class App extends Component {
 
     return (
       <div className="example-playground">
-        <MenuMobile active={true}>
+        <MenuMobile active={false}>
           <button> Oi </button>
         </MenuMobile>
 
