@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 import MenuMobile from "./components/MenuMobile";
-import MenuTabletDynamic from "./components/MenuTabletDynamic";
+import MenuTablet from "./components/MenuTablet";
 import LoadingWrapper from "./components/LoadingWrapper";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <MenuMobile active="false">
+        <MenuMobile active={false}>
           <button> Oi </button>
         </MenuMobile>
 
+        <MenuTablet active="false">
+          <button> X </button>
+          <button> C </button>
+          <button> A </button>
+        </MenuTablet>
+    
         <p> Olá</p>
         <p>
           De onde ele vem? Ao contrário do que se acredita, Lorem Ipsum não é
@@ -32,16 +38,7 @@ class App extends Component {
           versões para o inglês da tradução feita por H. Rackham em 1914.{" "}
         </p>
         
-        <ul className='listOfLi'>
-            <li> Li-item </li>
-            <div> div </div>
-            <img/>
-            <a href='#'> a </a>
-        </ul>
-            
-        <LoadingWrapper>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Big_Pinnacle_of_Pilot_Mountain_high_res.jpg" />
-        </LoadingWrapper>
+
       </div>
     );
   }
