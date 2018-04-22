@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import OverlayWrapper from "../OverlayWrapper";
 import "./style.css";
 
 class MenuMobile extends Component {
