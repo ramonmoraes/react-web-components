@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import OverlayWrapper from "../OverlayWrapper";
 import "./style.css";
 
 class MenuMobile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: (this.props.active) ? this.props.active : false
+      active: this.props.active ? this.props.active : false
     };
   }
 
@@ -45,9 +46,11 @@ class MenuMobile extends Component {
     const menuMobileClasss = active
       ? "MenuMobile MenuMobile--active"
       : "MenuMobile";
+
     const overlay = active ? (
       <div className="MenuMobile-overlay" onClick={this.toggleMenu} />
     ) : null;
+
 
     return (
       <nav className={menuMobileClasss}>
