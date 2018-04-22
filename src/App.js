@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import MenuMobile from "./components/MenuMobile";
 import MenuTablet from "./components/MenuTablet";
 import LoadingWrapper from "./components/LoadingWrapper";
+import MaterialInputLogin from "./components/MaterialInputLogin";
+import './index.css';
 
 class App extends Component {
   render() {
@@ -10,12 +12,12 @@ class App extends Component {
     };
     
     return (
-      <div>
+      <div className="example-playground">
         <MenuMobile active={false}>
           <button> Oi </button>
         </MenuMobile>
 
-        <MenuTablet active="false">
+        <MenuTablet active={false}>
           <button> X </button>
           <button> C </button>
           <button> A </button>
@@ -41,7 +43,9 @@ class App extends Component {
           reproduzidas abaixo em sua forma exata original, acompanhada das
           versões para o inglês da tradução feita por H. Rackham em 1914.{" "}
         </p>
-        
+        <div className="card">
+          <MaterialInputLogin name={"name"} placeholder={"Seu nome!"} />
+        </div>
 
       </div>
     );

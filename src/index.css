@@ -2,12 +2,19 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-}
+  background-color: #efefef; }
 
 .overlay::after {
   content: '';
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: rgba(0,0,0,0.35);
-}
+  background-color: rgba(0, 0, 0, 0.35); }
+
+.card {
+  padding: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.24);
+  width: 300px;
+  max-width: 80vw;
+  margin: auto;
+  background-color: white; }

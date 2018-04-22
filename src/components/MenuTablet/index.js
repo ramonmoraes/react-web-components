@@ -5,7 +5,7 @@ class MenuTablet extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: true,
+            active: (this.props.active) ? this.props.active : false
         }
     }
 
@@ -25,8 +25,8 @@ class MenuTablet extends Component {
         return listOfChildren.map((child, count) => {
           const { action, children } = child.props;
           const onChildClick = () => {
-            if (action) action();
-            this.toggleMenu();
+              if (action) action();
+              this.toggleMenu();
           };
           return (
             <button key={count} onClick={onChildClick}>

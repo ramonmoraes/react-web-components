@@ -1,0 +1,55 @@
+.MaterialLogin {
+  padding: 16px 4px 2px 4px;
+  position: relative;
+  border-bottom: 1px solid #dcdcdc;
+
+  &-input {
+    width: 100%;
+    position: relative;
+    border: none;
+    &::placeholder {
+      visibility: hidden;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-placeholder {
+    transition: 0.25s ease;
+    position: absolute;
+    left: 0;
+    padding: 2px 4px;
+    color: #aaa;
+    z-index: 1;
+  }
+  
+  &-complementary {
+    position: absolute;
+  }
+}
+
+.MaterialLogin--active {
+  .MaterialLogin {
+    &-input {
+      &::placholder {
+        visibility: visible;
+      }
+    }
+    &-placeholder {
+      font-size: 14px;
+      color: inherit;
+      transform: translateY(-100%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: red;
+      bottom: 0px;
+      left: 0%;
+    }
+  }
+}

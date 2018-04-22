@@ -1,0 +1,38 @@
+.MaterialLogin {
+  padding: 16px 4px 2px 4px;
+  position: relative;
+  border-bottom: 1px solid #dcdcdc; }
+  .MaterialLogin-input {
+    width: 100%;
+    position: relative;
+    border: none; }
+    .MaterialLogin-input::placeholder {
+      visibility: hidden; }
+    .MaterialLogin-input:focus {
+      outline: none; }
+  .MaterialLogin-placeholder {
+    transition: 0.25s ease;
+    position: absolute;
+    left: 0;
+    padding: 2px 4px;
+    color: #aaa;
+    z-index: 1; }
+  .MaterialLogin-complementary {
+    position: absolute; }
+
+.MaterialLogin--active .MaterialLogin-input::placholder {
+  visibility: visible; }
+
+.MaterialLogin--active .MaterialLogin-placeholder {
+  font-size: 14px;
+  color: inherit;
+  transform: translateY(-100%); }
+
+.MaterialLogin--active .MaterialLogin:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: red;
+  bottom: 0px;
+  left: 0%; }
