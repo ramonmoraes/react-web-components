@@ -3,7 +3,7 @@ import MenuMobile from "./components/MenuMobile";
 import MenuTablet from "./components/MenuTablet";
 import LoadingWrapper from "./components/LoadingWrapper";
 import MaterialInputLogin from "./components/MaterialInputLogin";
-import Card from "./components/Card";
+import CardComponent from "./components/Card";
 import "./index.css";
 
 class App extends Component {
@@ -44,6 +44,12 @@ class App extends Component {
           reproduzidas abaixo em sua forma exata original, acompanhada das
           versões para o inglês da tradução feita por H. Rackham em 1914.{" "}
         </p>
+        <CardComponent
+          image={'margoh.jpg'}
+          title={"Margarida"}
+          subtitle={"margoh"}
+          text={"Cícero, escrito em 45 AC. Este livro é um tratado de teoria da ética muito popular na época da Renascença. A primeira linha de Lorem Ipsum, Cícero, escrito em 45 AC. Este livro é um tratado de teoria da ética muito popular na época da Renascença. A primeira linha de Lorem Ipsum, Cícero, escrito em 45 AC. Este livro é um tratado de teoria da ética muito popular na época da Renascença. A primeira linha de Lorem Ipsum, Cícero, escrito em 45 AC. Este livro é um tratado de teoria da ética muito popular na época da Renascença. A primeira linha de Lorem Ipsum,"}
+        />
         <div className="card">
           <MaterialInputLogin
             autoComplete={"disabled"}
