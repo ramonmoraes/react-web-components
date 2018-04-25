@@ -3,6 +3,7 @@ import MenuMobile from "./components/MenuMobile";
 import MenuTablet from "./components/MenuTablet";
 import LoadingWrapper from "./components/LoadingWrapper";
 import MaterialInputLogin from "./components/MaterialInputLogin";
+import Card from "./components/Card";
 import "./index.css";
 
 class App extends Component {
