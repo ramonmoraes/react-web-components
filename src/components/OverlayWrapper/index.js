@@ -8,9 +8,10 @@ class OverlayFade extends Component {
   };
 
   render() {
-    return (
-      <div className="OverlayFade" onClick={this.handleClick}></div>
-    );
+    const { condition = true} = this.props;
+    return condition 
+    ? (<div className="OverlayFade" onClick={this.handleClick}></div>)
+    : null;
   }
 }
 export default OverlayFade;
