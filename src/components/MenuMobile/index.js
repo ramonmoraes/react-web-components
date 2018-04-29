@@ -1,25 +1,78 @@
 import React, { Component } from "react";
-import OverlayFade from '../OverlayFade';
+import OverlayFade from "../OverlayFade";
 import "./style.css";
 
 class MenuMobile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: this.props.active ? this.props.active : false
+      active: this.props.active ? this.props.active : true,
+      slidedX: 0
     };
   }
 
   toggleMenu = () => {
-    this.setState({
-      active: !this.state.active
-    });
+    this.state.active ? this.closeMenu() : this.openMenu();
   };
 
-  handleSideNav(ev){
-   ev.stopPropagation();
-   console.log(ev);
-  } 
+  closeMenu = () => {
+    this.setState({ active: false });
+  };
+
+  openMenu = () => {
+    this.setState({ active: true });
+  };
+
+  handleSideNav(ev) {
+    ev.stopPropagation();
+  }
+
+  componentDidMount() {
+    this.addSwipeListener();
+  }
+
+  addSwipeListener() {
+    const { sideNav } = this;
+    let start, distance;
+
+    sideNav.addEventListener("touchstart", ev => {
+      start = ev.targetTouches[0].clientX;
+    });
+
+    sideNav.addEventListener("touchmove", ev => {
+      distance = ev.changedTouches[0].clientX - start;
+      const swipeObject = {
+        distance,
+        ev
+      };
+      this.swipeAction(swipeObject);
+    });
+
+    const endParameter = 140 * -1;
+    sideNav.addEventListener("touchend", () => {
+      if (distance > endParameter && distance < 0) {
+        this.restoreInitialPosition();
+      } else if (distance < 0) {
+        this.closeMenu();
+        this.restoreInitialPosition();
+      } else {
+        this.restoreInitialPosition();
+      }
+    });
+  }
+
+  swipeAction = swipeObject => {
+    const { distance } = swipeObject;
+    if (distance < 0) {
+      this.setState({
+        slidedX: distance
+      });
+    }
+  };
+
+  restoreInitialPosition = () => {
+    this.setState({ slidedX: 0 });
+  };
 
   getListOfButtons = () => {
     const { active } = this.state;
@@ -42,12 +95,12 @@ class MenuMobile extends Component {
   };
 
   render() {
-    const { active } = this.state;
+    const { active, slidedX } = this.state;
     const listOfButtons = this.getListOfButtons();
     const menuMobileClasss = active
       ? "MenuMobile MenuMobile--active"
       : "MenuMobile";
-    
+    const leftStyle = { left: slidedX + "px" };
     return (
       <nav className={menuMobileClasss}>
         <OverlayFade condition={active} handleClick={this.toggleMenu} />
@@ -57,7 +110,13 @@ class MenuMobile extends Component {
             <b> MENU </b>{" "}
           </button>
         </div>
-        <div className="MenuMobile-sideNav" ref={(sideNav)=> this.sideNav = sideNav}onClick={this.handleSideNav}>
+
+        <div
+          className="MenuMobile-sideNav"
+          ref={sideNav => (this.sideNav = sideNav)}
+          onClick={this.handleSideNav}
+          style={leftStyle}
+        >
           <header className="MenuMobile-sideNav-header">
             <h1 className="datClass">Header</h1>
           </header>
@@ -70,4 +129,5 @@ class MenuMobile extends Component {
     );
   }
 }
+
 export default MenuMobile;
