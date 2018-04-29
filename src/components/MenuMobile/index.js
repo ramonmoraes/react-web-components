@@ -7,7 +7,7 @@ class MenuMobile extends Component {
     super(props);
     this.state = {
       active: this.props.active ? this.props.active : true,
-      slidedX: -5,
+      slidedX: -5
     };
   }
 
@@ -41,16 +41,11 @@ class MenuMobile extends Component {
 
     sideNav.addEventListener("touchmove", ev => {
       distance = ev.changedTouches[0].clientX - start;
-      const swipeObject = {
-        distance,
-        ev
-      };
-      this.swipeAction(swipeObject);
+      this.swipeAction(distance);
     });
 
-    const endParameter = 140 * -1;
     sideNav.addEventListener("touchend", () => {
-      if (distance > endParameter && distance < 0) {
+      if (distance > (140 * -1) && distance < 0) {
         this.restoreInitialPosition();
       } else if (distance < 0) {
         this.closeMenu();
@@ -61,8 +56,7 @@ class MenuMobile extends Component {
     });
   }
 
-  swipeAction = swipeObject => {
-    const { distance } = swipeObject;
+  swipeAction = distance => {
     if (distance < 0) {
       this.setState({
         slidedX: distance
@@ -106,8 +100,7 @@ class MenuMobile extends Component {
         <OverlayFade condition={active} handleClick={this.toggleMenu} />
         <div className="MenuMobile-topBar">
           <button onClick={this.toggleMenu}>
-            {" "}
-            <b> MENU </b>{" "}
+            <b> MENU </b>
           </button>
         </div>
 
