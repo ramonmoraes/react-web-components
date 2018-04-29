@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import OverlayFade from '../OverlayFade';
 import "./style.css";
 
 class MenuMobile extends Component {
@@ -46,20 +47,16 @@ class MenuMobile extends Component {
     const menuMobileClasss = active
       ? "MenuMobile MenuMobile--active"
       : "MenuMobile";
-
-    const overlay = active ? (
-      <div className="MenuMobile-overlay" onClick={this.toggleMenu} />
-    ) : null;
-
+    
     return (
       <nav className={menuMobileClasss}>
+        <OverlayFade condition={active} handleClick={this.toggleMenu} />
         <div className="MenuMobile-topBar">
           <button onClick={this.toggleMenu}>
             {" "}
             <b> MENU </b>{" "}
           </button>
         </div>
-        {overlay}
         <div className="MenuMobile-sideNav" ref={(sideNav)=> this.sideNav = sideNav}onClick={this.handleSideNav}>
           <header className="MenuMobile-sideNav-header">
             <h1 className="datClass">Header</h1>
