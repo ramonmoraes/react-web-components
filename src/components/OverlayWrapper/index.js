@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 
-class OverlayWrapper extends Component {
+class OverlayFade extends Component {
   handleClick = ev => {
     ev.stopPropagation();
     this.props.handleClick(ev);
@@ -9,8 +9,8 @@ class OverlayWrapper extends Component {
 
   render() {
     return (
-      <div className="Overlay" onClick={this.handleClick}></div>
+      <div className="OverlayFade" onClick={this.handleClick}></div>
     );
   }
 }
-export default OverlayWrapper;
+export default OverlayFade;
