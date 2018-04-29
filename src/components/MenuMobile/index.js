@@ -7,7 +7,7 @@ class MenuMobile extends Component {
     super(props);
     this.state = {
       active: this.props.active ? this.props.active : true,
-      slidedX: 0
+      slidedX: -5,
     };
   }
 
@@ -71,7 +71,7 @@ class MenuMobile extends Component {
   };
 
   restoreInitialPosition = () => {
-    this.setState({ slidedX: 0 });
+    this.setState({ slidedX: -5 });
   };
 
   getListOfButtons = () => {
