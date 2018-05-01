@@ -1,0 +1,13 @@
+.RoundedButton {
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: 0;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.27);
+  transition: 0.45s ease; }
+  .RoundedButton:hover {
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.54); }

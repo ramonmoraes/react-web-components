@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import pell from "pell";
+
+import RoundedButton from '../RoundedButton';
 import "./style.css";
 
 class PellEditor extends Component {
@@ -38,9 +40,11 @@ class PellEditor extends Component {
   render = () => (
     <div className="PellEditor">
       <div className="PellEditor-wrapper" />
-      <button onClick={this.handleSubmit} className="PellEditor-button-submit">
-        <i className="material-icons">send</i>
-      </button>
+      <RoundedButton
+        onClick={this.handleSubmit}
+        offSet="bottom right"
+        text={"oi"}
+      />
     </div>
   );
 }
