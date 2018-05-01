@@ -51,9 +51,11 @@
         max-height: 600px;
     }
   }
+
   &-text {
       margin: 0 0 $spacer 0;
   }
+  
   &-actions {
     display: flex;
     flex-direction: row-reverse;
