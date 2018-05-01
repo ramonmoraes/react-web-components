@@ -78,16 +78,17 @@ class MenuMobile extends Component {
       const { action, children } = child.props;
       const onChildClick = () => {
         if (action) action();
-        this.toggleMenu();
       };
-      if (child.type === "a") {
-        return child;
+
+      if (child.type === "button") {
+        return (
+          <button key={count} onClick={onChildClick}>
+            {children}
+          </button>
+        );
       }
-      return (
-        <button key={count} onClick={onChildClick}>
-          {children}
-        </button>
-      );
+      
+      return child;
     });
   };
 
@@ -116,7 +117,7 @@ class MenuMobile extends Component {
           <header className="MenuMobile-sideNav-header">
             <h1 className="datClass">Header</h1>
           </header>
-          <div className="MenuMobile-sideNav-buttons">
+          <div className="MenuMobile-sideNav-buttons" onClick={this.closeMenu}>
             {listOfButtons.map(menuButton => menuButton)}
             <button onClick={this.toggleMenu}> Fechar </button>
           </div>
