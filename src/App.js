@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 
 import MenuMobile from "./components/MenuMobile";
 import MenuTablet from "./components/MenuTablet";
-import LoadingWrapper from "./components/LoadingWrapper";
+import PellEditor from "./components/PellEditor";
 import MaterialInputLogin from "./components/MaterialInputLogin";
 import CardComponent from "./components/Card";
 
@@ -14,9 +14,11 @@ class App extends Component {
     const pushElements = {
       margin: 20 + "px"
     };
+    
     const defaultComponent = ()=> (
       <h1> Escolha o component no menu </h1>
-    )
+    );
+
     return (
       <BrowserRouter>
         <div className="example-playground">
@@ -24,14 +26,18 @@ class App extends Component {
             <Link to="/MaterialInputs"> MaterialInputs </Link>
             <Link to="/CardComponent"> CardComponent </Link>
             <Link to="/MenuTablet"> MenuTablet </Link>
+            <Link to="/PellEditor"> PellEditor </Link>
           </MenuMobile>
 
           <span style={pushElements} />
-          
-          <Route exact path="/" component={defaultComponent} />
-          <Route path="/MaterialInputs" component={MaterialInputs} />
-          <Route path="/CardComponent" component={CardComponentExample} />
-          <Route path="/MenuTablet" component={MenuTabletExample} />
+
+          <div className="centered">
+            <Route exact path="/" component={defaultComponent} />
+            <Route path="/MaterialInputs" component={MaterialInputs} />
+            <Route path="/CardComponent" component={CardComponentExample} />
+            <Route path="/MenuTablet" component={MenuTabletExample} />
+            <Route path="/PellEditor" component={PellEditorExample} />
+          </div>
         </div>
       </BrowserRouter>
     );
@@ -97,3 +103,7 @@ const MenuTabletExample = () => (
     <button> A </button>
   </MenuTablet>
 );
+
+const PellEditorExample = ()=> (
+  <PellEditor />
+)

@@ -13,6 +13,17 @@ class OverlayWrapper extends Component {
     });
   };
 
+  renderReadMore = () => {
+    let readMoreClass="CardComponent-readmore";
+    if (!this.state.isOpen) readMoreClass += " CardComponent-readmore--visible";
+
+    return (
+      <div className={readMoreClass}onClick={this.handleClick}>
+        Leia mais!
+      </div>
+    );
+  }
+
   render() {
     let descriptionClass = "CardComponent-description";
     if (this.state.isOpen) descriptionClass += " CardComponent-description--toggled";
@@ -33,7 +44,7 @@ class OverlayWrapper extends Component {
           <div className={descriptionClass}>
             <p className="CardComponent-text"> {this.props.text} </p>
           </div>
-
+          {this.renderReadMore()}
           <div className="CardComponent-actions">
             <button className="CardComponent-button"> + </button>
           </div>

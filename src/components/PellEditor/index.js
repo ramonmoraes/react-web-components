@@ -9,3 +9,5 @@ class PellEditor extends Component {
         )
     }
 }
+
+export default PellEditor;

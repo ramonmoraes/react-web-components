@@ -23,3 +23,10 @@ body {
   margin: auto;
   background-color: white;
 }
+
+.centered {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
