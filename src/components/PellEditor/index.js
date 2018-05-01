@@ -43,7 +43,11 @@ class PellEditor extends Component {
       <RoundedButton
         onClick={this.handleSubmit}
         offSet="bottom right"
-        icon={"send"}
+        icon="send"
+        style={{
+          background: "#aaa",
+          color: "#fff",
+        }}
       />
     </div>
   );
