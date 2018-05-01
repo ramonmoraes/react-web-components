@@ -35,7 +35,7 @@ class PellEditor extends Component {
     <div className="PellEditor">
       <div className="PellEditor-wrapper" />
       <button onClick={this.handleSubmit} className="PellEditor-button-submit">
-        <i class="material-icons">send</i>
+        <i className="material-icons">send</i>
       </button>
     </div>
   );
