@@ -53,6 +53,8 @@
       display: flex;
       flex-direction: column; }
       .MenuMobile-sideNav-buttons * {
+        text-decoration: none;
+        color: inherit;
         background: transparent;
         border: none;
         height: 40px;

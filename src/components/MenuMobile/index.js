@@ -45,7 +45,7 @@ class MenuMobile extends Component {
     });
 
     sideNav.addEventListener("touchend", () => {
-      if (distance > (140 * -1) && distance < 0) {
+      if (distance > 140 * -1 && distance < 0) {
         this.restoreInitialPosition();
       } else if (distance < 0) {
         this.closeMenu();
@@ -80,6 +80,9 @@ class MenuMobile extends Component {
         if (action) action();
         this.toggleMenu();
       };
+      if (child.type === "a") {
+        return child;
+      }
       return (
         <button key={count} onClick={onChildClick}>
           {children}

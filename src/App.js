@@ -16,6 +16,7 @@ class App extends Component {
       <div className="example-playground">
         <MenuMobile active={false}>
           <button> Oi </button>
+          <a href="/ola"> A-tag </a>
         </MenuMobile>
 
         {/* <MenuTablet active={false}>
