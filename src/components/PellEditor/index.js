@@ -9,9 +9,13 @@ class PellEditor extends Component {
   }
 
   handleChange = text => {
+    const onChange = this.props;
     this.setState({
       text
     });
+    if(onChange) {
+      onChange(text);
+    }
   };
 
   handleSubmit = () => {
