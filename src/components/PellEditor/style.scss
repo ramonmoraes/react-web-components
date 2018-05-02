@@ -1,6 +1,7 @@
 .PellEditor {
   $black12: rgba(0, 0, 0, 0.12);
   $black27: rgba(0, 0, 0, 0.27);
+  $black87: rgba(0, 0, 0, 0.87);
   $spacer: 8px;
   $themeColor: #aaa;
   box-shadow: 0 0 $spacer 0 $black27;
@@ -16,10 +17,12 @@
   }
 
   &-button {
+    display: flex;
     background: transparent;
     border: none;
     padding: $spacer;
     font-size: 18px;
+    color: $black87;
     font-family: inherit;
     &:hover {
       cursor: pointer;
