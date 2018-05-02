@@ -19,14 +19,10 @@
   &-button {
     display: flex;
     background: transparent;
-    border: none;
+    border: 0;
     padding: $spacer;
-    font-size: 18px;
     color: $black87;
-    font-family: inherit;
-    &:hover {
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 
   &-content {
