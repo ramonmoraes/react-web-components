@@ -12,6 +12,7 @@
   cursor: pointer;
   outline: 0;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.27);
-  transition: 0.45s ease; }
+  transition: 0.45s ease;
+  user-select: none; }
   .RoundedButton:hover {
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.54); }
