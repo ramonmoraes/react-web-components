@@ -11,7 +11,7 @@ class PellEditor extends Component {
   }
 
   handleChange = text => {
-    const onChange = this.props;
+    const { onChange } = this.props;
     this.setState({
       text
     });
