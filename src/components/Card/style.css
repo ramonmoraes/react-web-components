@@ -24,7 +24,8 @@
     margin: 0 0 0 16px;
     color: rgba(0, 0, 0, 0.42);
     opacity: 0;
-    transition: 0.05s; }
+    transition: 0.05s;
+    cursor: pointer; }
     .CardComponent-readmore--visible {
       opacity: 1; }
   .CardComponent-description {

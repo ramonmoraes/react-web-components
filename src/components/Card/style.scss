@@ -37,6 +37,7 @@
     color: rgba(0,0,0,0.42);
     opacity: 0;
     transition: 0.05s;
+    cursor: pointer;
     &--visible {
       opacity: 1;
     }
