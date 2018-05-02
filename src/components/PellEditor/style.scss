@@ -1,25 +1,27 @@
 .PellEditor {
+  $black12: rgba(0, 0, 0, 0.12);
   $black27: rgba(0, 0, 0, 0.27);
   $black54: rgba(0, 0, 0, 0.54);
   $spacer: 8px;
   $themeColor: #aaa;
-
+  box-shadow: 0 0 $spacer 0 $black27;
   background-color: white;
   width: 500px;
   max-width: 90%;
-  border: 1px solid $black27;
   position: relative;
 
   &-actionbar {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid $black27;
+    border-bottom: 1px solid $black12;
+    // box-shadow: 0 3px 3px -1px $black27;
   }
 
   &-button {
     background: transparent;
     border: none;
     padding: $spacer;
+    font-size: 18px;
     font-family: inherit;
     &:hover {
       cursor: pointer;
@@ -28,6 +30,7 @@
 
   &-content {
     outline: 0;
+    border: 0;
     padding: $spacer;
     margin-bottom: $spacer * 2;
     &:active {
