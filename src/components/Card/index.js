@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import RoundedButton from '../RoundedButton';
+
 import "./style.css";
 
 class OverlayWrapper extends Component {
@@ -46,7 +48,9 @@ class OverlayWrapper extends Component {
           </div>
           {this.renderReadMore()}
           <div className="CardComponent-actions">
-            <button className="CardComponent-button"> + </button>
+            <RoundedButton
+              icon="phone"
+            />
           </div>
         </div>
       );
