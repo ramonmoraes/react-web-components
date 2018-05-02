@@ -23,10 +23,10 @@ class App extends Component {
       <BrowserRouter>
         <div className="example-playground">
           <MenuMobile active={false}>
-            <Link to="/MaterialInputs"> MaterialInputs </Link>
-            <Link to="/CardComponent"> CardComponent </Link>
-            <Link to="/MenuTablet"> MenuTablet </Link>
-            <Link to="/PellEditor"> PellEditor </Link>
+            <Link to="/MaterialInputs"> Material Inputs </Link>
+            <Link to="/CardComponent"> Card Component </Link>
+            {/* <Link to="/MenuTablet"> Menu Tablet </Link> */}
+            <Link to="/PellEditor"> Pell Editor </Link>
           </MenuMobile>
 
           <span style={pushElements} />

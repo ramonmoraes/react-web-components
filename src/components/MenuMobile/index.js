@@ -32,8 +32,8 @@ class MenuMobile extends Component {
   }
 
   addSwipeListener() {
-    const { sideNav } = this;
-    let start, distance;
+    const { sideNav, sideNavHelper } = this;
+    let start, distance, timeStart;
 
     sideNav.addEventListener("touchstart", ev => {
       start = ev.targetTouches[0].clientX;
@@ -52,6 +52,19 @@ class MenuMobile extends Component {
         this.restoreInitialPosition();
       } else {
         this.restoreInitialPosition();
+      }
+    });
+
+    sideNavHelper.addEventListener("touchstart", ev => {
+      start = ev.targetTouches[0].clientX;
+      timeStart = ev.timeStamp;
+    });
+
+    sideNavHelper.addEventListener("touchend", (ev) => {
+      distance = ev.changedTouches[0].clientX - start;
+      const moveDuration = ev.timeStamp - timeStart;
+      if(moveDuration < 300 && distance > 70) {
+        this.openMenu();
       }
     });
   }
@@ -87,7 +100,7 @@ class MenuMobile extends Component {
           </button>
         );
       }
-      
+
       return child;
     });
   };
@@ -102,9 +115,13 @@ class MenuMobile extends Component {
     return (
       <nav className={menuMobileClasss}>
         <OverlayFade condition={active} handleClick={this.toggleMenu} />
+        <span
+          ref={sideNavHelper => (this.sideNavHelper = sideNavHelper)}
+          className="MenuMobile-sideNav-helper"
+        />
         <div className="MenuMobile-topBar">
           <button className="MenuMobile-topBar-icon" onClick={this.toggleMenu}>
-            <b class="material-icons">menu</b>
+            <b className="material-icons">menu</b>
           </button>
         </div>
 
