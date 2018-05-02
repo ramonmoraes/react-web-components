@@ -27,7 +27,6 @@
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5); }
   .MenuMobile-sideNav {
-    border: 1px solid tomato;
     position: fixed;
     transition: inherit;
     top: 0px;
