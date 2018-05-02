@@ -28,8 +28,8 @@
   &-content {
     outline: 0;
     border: 0;
-    padding: $spacer;
-    margin-bottom: $spacer * 2;
+    padding: $spacer $spacer * 2;
+    margin: $spacer*2 0;
     &:active {
       outline: none;
     }
