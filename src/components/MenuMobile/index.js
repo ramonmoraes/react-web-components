@@ -103,8 +103,8 @@ class MenuMobile extends Component {
       <nav className={menuMobileClasss}>
         <OverlayFade condition={active} handleClick={this.toggleMenu} />
         <div className="MenuMobile-topBar">
-          <button onClick={this.toggleMenu}>
-            <b> MENU </b>
+          <button className="MenuMobile-topBar-icon" onClick={this.toggleMenu}>
+            <b class="material-icons">menu</b>
           </button>
         </div>
 

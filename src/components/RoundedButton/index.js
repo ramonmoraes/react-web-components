@@ -42,7 +42,6 @@ class RoundedButton extends Component {
       ...style,
       ...this.getOffSet()
     };
-    console.log(newStyle);
     let content;
     if (text) content = text;
     if (icon) content = <i className="material-icons">{icon}</i>;
