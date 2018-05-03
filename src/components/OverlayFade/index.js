@@ -10,10 +10,11 @@ class OverlayFade extends Component {
   render() {
     const { condition = true} = this.props;
     const body = document.body; 
+    
     if (condition) {
-      body.classList.add('unscrollable');
+      body.classList.add('OverlayFade-body-lock');
     } else {
-      body.classList.remove('unscrollable');
+      body.classList.remove('OverlayFade-body-lock');
     }
 
     return condition 
