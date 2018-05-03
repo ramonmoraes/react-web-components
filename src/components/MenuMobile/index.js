@@ -50,13 +50,8 @@ class MenuMobile extends Component {
         this.restoreInitialPosition();
       } else if (distance < 0) {
         this.closeMenu();
-        this.restoreInitialPosition();
-      } else {
-        this.restoreInitialPosition();
-      }
-      this.setState({
-        dragged: false
-      });
+      } 
+      this.restoreInitialPosition();
     });
 
     sideNavHelper.addEventListener("touchstart", ev => {
@@ -83,7 +78,10 @@ class MenuMobile extends Component {
   };
 
   restoreInitialPosition = () => {
-    this.setState({ slidedX: -5 });
+    this.setState({ 
+      slidedX: -5,
+      dragged: false,
+    });
   };
 
   getListOfButtons = () => {
@@ -116,7 +114,7 @@ class MenuMobile extends Component {
     const menuMobileClasss = active
       ? "MenuMobile MenuMobile--active"
       : "MenuMobile";
-    let dragStyle = { left: slidedX + "px" };
+    let draggableStyle = { left: slidedX + "px" };
     const sideNavClass = (dragged) 
       ? "MenuMobile-sideNav MenuMobile-sideNav--dragged"  
       : "MenuMobile-sideNav";
@@ -137,7 +135,7 @@ class MenuMobile extends Component {
           className={sideNavClass}
           ref={sideNav => (this.sideNav = sideNav)}
           onClick={this.handleSideNav}
-          style={dragStyle}
+          style={draggableStyle}
         >
           <header className="MenuMobile-sideNav-header">
             <h1 className="datClass">Header</h1>
