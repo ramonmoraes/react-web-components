@@ -48,6 +48,10 @@
     transform: translateX(-101%);
     box-shadow: $boxShadow;
 
+    &--dragged {
+      transition: 0s;
+    }
+
     &-header {
       height: 35%;
       font-size: 1.5em;

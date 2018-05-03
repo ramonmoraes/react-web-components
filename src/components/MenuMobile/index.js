@@ -7,6 +7,7 @@ class MenuMobile extends Component {
     super(props);
     this.state = {
       active: this.props.active ? this.props.active : true,
+      dragged: false,
       slidedX: -5
     };
   }
@@ -53,6 +54,9 @@ class MenuMobile extends Component {
       } else {
         this.restoreInitialPosition();
       }
+      this.setState({
+        dragged: false
+      });
     });
 
     sideNavHelper.addEventListener("touchstart", ev => {
@@ -72,7 +76,8 @@ class MenuMobile extends Component {
   swipeAction = distance => {
     if (distance < 0) {
       this.setState({
-        slidedX: distance
+        slidedX: distance,
+        dragged: true,
       });
     }
   };
@@ -106,13 +111,16 @@ class MenuMobile extends Component {
   };
 
   render() {
-    const { active, slidedX } = this.state;
+    const { active, slidedX, dragged } = this.state;
     const listOfButtons = this.getListOfButtons();
     const menuMobileClasss = active
       ? "MenuMobile MenuMobile--active"
       : "MenuMobile";
-    const leftStyle = { left: slidedX + "px" };
-    return (
+    let dragStyle = { left: slidedX + "px" };
+    const sideNavClass = (dragged) 
+      ? "MenuMobile-sideNav MenuMobile-sideNav--dragged"  
+      : "MenuMobile-sideNav";
+      return (
       <nav className={menuMobileClasss}>
         <OverlayFade condition={active} handleClick={this.toggleMenu} />
         <span
@@ -126,10 +134,10 @@ class MenuMobile extends Component {
         </div>
 
         <div
-          className="MenuMobile-sideNav"
+          className={sideNavClass}
           ref={sideNav => (this.sideNav = sideNav)}
           onClick={this.handleSideNav}
-          style={leftStyle}
+          style={dragStyle}
         >
           <header className="MenuMobile-sideNav-header">
             <h1 className="datClass">Header</h1>
