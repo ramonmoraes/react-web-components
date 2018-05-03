@@ -12,9 +12,9 @@ class OverlayFade extends Component {
     const body = document.body; 
     
     if (condition) {
-      body.classList.add('OverlayFade-body-lock');
+      body.classList.add('OverlayFade--body-lock');
     } else {
-      body.classList.remove('OverlayFade-body-lock');
+      body.classList.remove('OverlayFade--body-lock');
     }
 
     return condition 
