@@ -17,8 +17,9 @@
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
-    "build": "npm run build-css && react-scripts build",
+    "build": "npm run build-css && react-scripts build && npm run cp-redirect",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cp-redirect": "cp ./_redirects ./build"
   }
 }
