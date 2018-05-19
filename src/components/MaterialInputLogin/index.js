@@ -12,6 +12,10 @@ class MaterialInputLogin extends Component {
   }
 
   handleChange = ev => {
+    const { handleChange } = this.props;
+    if ( handleChange ) {
+      handleChange(this.state.value)
+    }
     this.setState({ value: ev.target.value });
   };
 
